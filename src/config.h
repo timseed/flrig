@@ -2,34 +2,34 @@
 /* src/config.h.in.  Generated from configure.ac by autoheader.  */
 
 /* Build platform */
-#define BUILD_BUILD_PLATFORM "x86_64-pc-linux-gnu"
+#define BUILD_BUILD_PLATFORM "x86_64-apple-darwin19.6.0"
 
 /* Compiler */
-#define BUILD_COMPILER "gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) "
+#define BUILD_COMPILER "InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin"
 
 /* Configure arguments */
-#define BUILD_CONFIGURE_ARGS "'PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/:/usr/local/lib64/pkgconfig/'"
+#define BUILD_CONFIGURE_ARGS "'--prefix=/Users/tim/flrig' '--enable-debug'"
 
 /* Build date */
-#define BUILD_DATE "Thu Jul  2 19:46:48 CDT 2020"
+#define BUILD_DATE "Mon Aug 31 15:39:42 PST 2020"
 
 /* Build host */
-#define BUILD_HOST "m90p"
+#define BUILD_HOST "Timothys-Mini"
 
 /* Host platform */
-#define BUILD_HOST_PLATFORM "x86_64-pc-linux-gnu"
+#define BUILD_HOST_PLATFORM "x86_64-apple-darwin19.6.0"
 
 /* Target platform */
-#define BUILD_TARGET_PLATFORM "x86_64-pc-linux-gnu"
+#define BUILD_TARGET_PLATFORM "x86_64-apple-darwin19.6.0"
 
 /* Build user */
-#define BUILD_USER "dave"
+#define BUILD_USER "tim"
 
 /* FLRIG compiler flags */
-#define FLRIG_BUILD_CXXFLAGS "-I$(srcdir) -I$(srcdir)/include -I/usr/local/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/freetype2 -I/usr/include/libpng16 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT -I$(srcdir) -I$(srcdir)/include -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions -fomit-frame-pointer -DNDEBUG"
+#define FLRIG_BUILD_CXXFLAGS "-I$(srcdir) -I$(srcdir)/include -I$(srcdir)/xmlrpcpp -fno-stack-check -mmacosx-version-min=10.11 -I$(srcdir)/xmlrpcpp -I/usr/local/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT -I$(srcdir) -I$(srcdir)/include -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions -fomit-frame-pointer -O0 -fno-inline-functions -fno-omit-frame-pointer -ggdb3 -Wall -fno-stack-check -mmacosx-version-min=10.11 -UNDEBUG"
 
 /* FLRIG linker flags */
-#define FLRIG_BUILD_LDFLAGS "-L/usr/local/lib -lfltk_images -lpng -lz -ljpeg -lfltk -lXrender -lXcursor -lXfixes -lXext -lXft -lfontconfig -lXinerama -lpthread -ldl -lm -lX11 -lX11 -ldl -lpthread -lflxmlrpc"
+#define FLRIG_BUILD_LDFLAGS "-rdynamic -L/usr/local/lib -lfltk_images -lpng -lz -ljpeg -lfltk -lpthread -framework Cocoa"
 
 /* FLTK API major version */
 #define FLRIG_FLTK_API_MAJOR 1
@@ -53,13 +53,13 @@
 #define FLTK_BUILD_VERSION "1.3.5"
 
 /* flxmlrpc version */
-#define FLXMLRPC_BUILD_VERSION "0.1.4"
+#define FLXMLRPC_BUILD_VERSION ""
 
 /* Define to 1 if we have clock_gettime */
 #define HAVE_CLOCK_GETTIME 1
 
 /* Define to 0 if not using dbg::stack */
-/* #undef HAVE_DBG_STACK */
+#define HAVE_DBG_STACK 0
 
 /* Define to 1 if we have dlopen */
 #define HAVE_DLOPEN 1
@@ -98,7 +98,7 @@
 #define HAVE_SELECT 1
 
 /* Define to 1 if we have sem_timedwait */
-#define HAVE_SEM_TIMEDWAIT 1
+#define HAVE_SEM_TIMEDWAIT 0
 
 /* Define to 1 if we have sem_unlink */
 #define HAVE_SEM_UNLINK 1
@@ -146,7 +146,7 @@
 #define HAVE_STRING_H 1
 
 /* Define to 1 if you have the `strlcpy' function. */
-/* #undef HAVE_STRLCPY */
+#define HAVE_STRLCPY 1
 
 /* Define to 1 if you have the `strncasecmp' function. */
 #define HAVE_STRNCASECMP 1
@@ -206,7 +206,7 @@
 #define STDC_HEADERS 1
 
 /* Define to 1 if we are using flxmlrpc */
-#define USE_FLXMLRPC 1
+#define USE_FLXMLRPC 0
 
 /* Enable extensions on AIX 3, Interix.  */
 #ifndef _ALL_SOURCE
@@ -231,13 +231,13 @@
 
 
 /* Define to 1 if we are using x */
-#define USE_X 1
+/* #undef USE_X */
 
 /* Version number of package */
 #define VERSION "1.3.51"
 
 /* x version */
-#define X_BUILD_VERSION "1.6.4"
+/* #undef X_BUILD_VERSION */
 
 /* Define to 1 if on MINIX. */
 /* #undef _MINIX */
