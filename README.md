@@ -4,12 +4,15 @@ I have tried to use FLRIG several times to control my old IC7000, but it just do
 
 I should point out that I can control the IC7000 via the rigctl interface, so I am sure it is receiving the commands - the settings I use are like this 
 
-
-    rigctld -m 360  -r /dev/<MY USB Device for the IC7000>  -s 9600  --port=4532
+```bash
+rigctld -m 360  -r /dev/<MY USB Device for the IC7000>  -s 9600  --port=4532
+```
 
 I then verify that the radio is working by using NetCat (nc) 
 
-   echo "f" | nv 127.0.0.1 4532 
+```bash
+echo "f" | nv 127.0.0.1 4532 
+```
 
 And I see the VFO-A Frequency.
 
@@ -54,7 +57,7 @@ make -j4
 make install
 ```
 
-Please note: This has installed a local copy into your $HOME/flrig area. 
+Please note: This has installed a local copy into your $HOME/flrig area. This is intentional.
 
 
 ### Running
@@ -152,15 +155,15 @@ That seems a lot of data - but let's just look at this for a second ....
 
 This is the Stack, what has been called, and then what it calls..... The problem will be somewhere close to the top.
 
-Notice how frame #6 is from code that we compiled... 
+Notice how frame #6 is from code that we compiled... (the lines before this are System objects... and so are implementing something we are asking for).
 
 ```text
  frame #6: 0x0000000100279ffb flrig`print(data=0x000000010044c6f0) at support.cxx:188:2
 ```
 
-It shows a filename, and the line.
+It shows a filename, and the line (188).
 
-I quit this debug session by typing **l** and pressing return.
+I quit this debug session by typing **q** and pressing return.
 
 
 ## Debug Exploring
