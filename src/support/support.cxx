@@ -182,6 +182,9 @@ char *print(XCVR_STATE &data)
 	const char **bwt = selrig->bwtable(data.imode);
 	const char **dsplo = selrig->lotable(data.imode);
 	const char **dsphi = selrig->hitable(data.imode);
+	cout << "dsp setting is " << selrig->has_dsp_controls << endl;
+	cout << "bwt is "<< *bwt <<endl;
+	cout << "data.iBW is " << data.iBW << endl;
 	snprintf(
 		str, sizeof(str),
 		"\
@@ -203,12 +206,11 @@ Data Source: %s\n\
 		data.imode,
 		selrig->modes_ ? selrig->modes_[data.imode] : "modes n/a",
 		selrig->has_FILTER ? selrig->FILT(selrig->get_FILT(data.imode)) : "n/a",
-		data.iBW,
-		"0","0",
-		//(data.iBW > 256 && selrig->has_dsp_controls) ?
-		//	(dsplo ? dsplo[data.iBW & 0x7F] : "??") : (bwt ? bwt[data.iBW] : "n/a"),
-		//(data.iBW > 256 && selrig->has_dsp_controls) ?
-		//	(dsphi ? dsphi[(data.iBW >> 8) & 0x7F] : "??") : "",
+		data.iBW,"0","0",
+//		(data.iBW > 256 && selrig->has_dsp_controls) ?
+//			(dsplo ? dsplo[data.iBW & 0x7F] : "??") : (bwt ? bwt[data.iBW] : "n/a"),
+//		(data.iBW > 256 && selrig->has_dsp_controls) ?
+//			(dsphi ? dsphi[(data.iBW >> 8) & 0x7F] : "??") : "",
 		data.split,
 		data.power_control,
 		data.volume_control,
